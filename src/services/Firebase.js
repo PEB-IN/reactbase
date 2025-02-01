@@ -7,13 +7,14 @@ import {
 import { getMessaging, getToken } from "firebase/messaging";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD0dNs1FBQK9VhKSjexiaiHPyE9ONWrBcA",
-  authDomain: "web-push-notification-dec68.firebaseapp.com",
-  projectId: "web-push-notification-dec68",
-  storageBucket: "web-push-notification-dec68.firebasestorage.app",
-  messagingSenderId: "501508287202",
-  appId: "1:501508287202:web:831e59416d095a77dc4cbb",
-  measurementId: "G-2LHW33LP3G",
+  apiKey: "AIzaSyDJ14QgFaaqT55_0YpPmawgQ6rtHgBWQTk",
+  authDomain: "rareflowers-3c204.firebaseapp.com",
+  databaseURL: "https://rareflowers-3c204-default-rtdb.firebaseio.com",
+  projectId: "rareflowers-3c204",
+  storageBucket: "rareflowers-3c204.firebasestorage.app",
+  messagingSenderId: "717784001827",
+  appId: "1:717784001827:web:83b0bd010628d2ce317096",
+  measurementId: "G-FNK1FPTP3W",
 };
 
 // Initialize Firebase
@@ -31,8 +32,8 @@ export const generateToken = async () => {
   if (permission === "granted") {
     const token = await getToken(messaging, {
       vapidKey:
-        "BIodo7iqonpDUsRCR8KBfo_zGRO7mtcHkPPLkQnaNs8xWeYAxM_lHdDDCV0qpCIuKI_iUdGnNOGdI8SmtHde9pw",
+        "BGLLEMxJ2-ULONpeRY3O5vaozz_6BkU9I6cxPXB7PMkf6E3EA5SLjBOC80xcKHuqMu0zpsUPIbZSL9hzF_ASdQU",
     });
-    // console.log(token);
+    console.log(token, "webtoken");
   }
 };

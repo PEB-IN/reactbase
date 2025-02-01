@@ -9,13 +9,14 @@ importScripts(
 // your app's Firebase config object.
 // https://firebase.google.com/docs/web/setup#config-object
 firebase.initializeApp({
-  apiKey: "AIzaSyD0dNs1FBQK9VhKSjexiaiHPyE9ONWrBcA",
-  authDomain: "web-push-notification-dec68.firebaseapp.com",
-  projectId: "web-push-notification-dec68",
-  storageBucket: "web-push-notification-dec68.firebasestorage.app",
-  messagingSenderId: "501508287202",
-  appId: "1:501508287202:web:831e59416d095a77dc4cbb",
-  measurementId: "G-2LHW33LP3G",
+  apiKey: "AIzaSyDJ14QgFaaqT55_0YpPmawgQ6rtHgBWQTk",
+  authDomain: "rareflowers-3c204.firebaseapp.com",
+  databaseURL: "https://rareflowers-3c204-default-rtdb.firebaseio.com",
+  projectId: "rareflowers-3c204",
+  storageBucket: "rareflowers-3c204.firebasestorage.app",
+  messagingSenderId: "717784001827",
+  appId: "1:717784001827:web:83b0bd010628d2ce317096",
+  measurementId: "G-FNK1FPTP3W",
 });
 
 const messaging = firebase.messaging();
@@ -31,6 +32,7 @@ messaging.onBackgroundMessage((payload) => {
     body: payload.notification.body,
     icon: payload.notification.image,
   };
-
+  console.log(notificationOptions, notificationTitle);
+  alert("Notification Recieved");
   self.registration.showNotification(notificationTitle, notificationOptions);
 });

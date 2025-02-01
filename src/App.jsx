@@ -10,7 +10,17 @@ const App = () => {
   useEffect(() => {
     generateToken();
     onMessage(messaging, (payload) => {
-      console.log(payload);
+      console.log("Notification Payload:", payload);
+      const { title, body, image } = payload.notification; // Extracting notification details
+
+      console.log(title, body, image);
+      alert("Notification Recieved");
+
+      // Show the notification using the Notification API
+      new Notification(title, {
+        body: body,
+        icon: image,
+      });
     });
   }, []);
 
